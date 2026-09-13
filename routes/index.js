@@ -8,7 +8,6 @@ const { getDatabase } = require('../db');
 /* GET home page. */
 router.get('/', requireLogin, async function(req, res, next) {
   try {
-
     const db = getDatabase();
 
     const products = await db
@@ -18,10 +17,17 @@ router.get('/', requireLogin, async function(req, res, next) {
 
     res.render('index', {
       products: products,
-      user: req.session.user
+      user: req.session.user,
+      error: null
     });
   } catch (error) {
-    next(error);
+    console.error('Database unavailable:', error);
+
+    res.render('index', {
+      products: [],
+      user: req.session.user,
+      error: 'Database connection failed'
+    });
   }
 });
 

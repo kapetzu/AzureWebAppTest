@@ -32,9 +32,6 @@ tr:hover {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 30px;
 }
 
@@ -76,4 +73,12 @@ button:hover {
 
 .logout-box a {
   text-decoration: none;
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
 }
