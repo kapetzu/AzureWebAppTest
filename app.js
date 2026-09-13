@@ -27,8 +27,9 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    //secure: process.env.NODE_ENV === 'production'
-    secure: false
+    secure: true
+    //secure: false
+    // false for development as enviroinment variable did not seem to work.
   }
 }));
 
