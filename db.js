@@ -12,7 +12,7 @@ async function connectToDatabase() {
     const encodedPassword = encodeURIComponent(password);
 
     const uri =
-        `mongodb+srv://${encodedUsername}:${encodedPassword}@webapptestdb.u0qzncn.mongodb.net/?appName=WebAppTestDB`;
+      `mongodb+srv://${encodedUsername}:${encodedPassword}@${process.env.MONGODB_HOST}/?appName=WebAppTestDB`;
 
     const client = new MongoClient(uri);
 
